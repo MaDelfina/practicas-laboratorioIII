@@ -120,7 +120,7 @@ let watchList = [
 
 const returnMovieTitle = (watchlist) => {
 	const filterMovies = watchlist.filter((m) => m.Director === "Christopher Nolan" && m.imdbRating > 8.0);
-	return filterMovies.map((m) => ({ Title: m.Title }));
+	return filterMovies.map((m) => m.Title );
 };
   
 const titlesArray = returnMovieTitle(watchList);
