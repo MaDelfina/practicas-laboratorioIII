@@ -1,5 +1,5 @@
 import Table from 'react-bootstrap/Table';
-import { propTypes } from 'react-bootstrap/esm/Image';
+import { PropTypes } from 'prop-types';
 
 function TableMarca({ netIncome }) {
 
@@ -34,7 +34,7 @@ function TableMarca({ netIncome }) {
 }
 
 Table.propTypes = {
-    netIncome: propTypes.array,
+    netIncome: PropTypes.func,
 };
 
 export default TableMarca;

@@ -9,11 +9,9 @@ const NETINCOME = [
 
 function App() {
 
-  const [netIncome, setNetIncome] = useState(NETINCOME);
-
   return (
     <>
-      <Table netIncome={netIncome} />
+      <Table netIncome={NETINCOME} />
     </>
   )
 }
