@@ -5,15 +5,17 @@ import { useState } from "react";
 function Login() {
     const [searchLetter, setSearchLetter] = useState("");
 
-    const handlerSearchLetter = (event) => {
-        setSearchLetter(event.target.value);
+    const handlerSearchLetterO = (event) => {
+        const value = event.target.value;
+        setSearchLetter(value);
+        if (value.toLowerCase().includes('o')) {
+            alert('Por favor, ¡Nombres de usuario sin la letra o!');
+        }
     }
 
-    function searchLetterO(){
+    function registerUser(){
         if (searchLetter === '') {
             alert('Usuario inválido para registrarse');
-        } else if (searchLetter.includes('o') || searchLetter.includes('O') ) {
-            alert('Por favor, ¡Nombres de usuario sin la letra o!');
         } else {
             alert('¡Usuario registrado correctamente!');
         }
@@ -21,19 +23,17 @@ function Login() {
     
     return(
         <div>
-            <h5>Ingrese su nombre de usuario</h5>
-
             <Form.Label htmlFor="inputUserName5">Usuario</Form.Label>
             <Form.Control
                 type="userName"
                 id="inputUserName5"
                 aria-describedby="userNameHelpBlock"
                 placeholder='Ingrese su usuario'
-                onChange={handlerSearchLetter}
+                onChange={handlerSearchLetterO}
                 value={searchLetter}
             />
 
-            <Button variant="primary" type="submit" onClick={searchLetterO}>Registrarse</Button>
+            <Button variant="primary" type="submit" onClick={registerUser}>Registrarse</Button>
 
             <p>{searchLetter}</p>
 
