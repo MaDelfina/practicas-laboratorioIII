@@ -21,7 +21,7 @@ function NuevaTarea({agregarTarea}) {
     event.preventDefault();
     if (nuevaTarea.trim() !== "") {
       agregarTarea(nuevaTarea);
-      setNuevaTarea(""); // Limpiar el input después de agregar la tarea
+      setNuevaTarea("");
     }
   }
 
@@ -54,7 +54,7 @@ function NuevaTarea({agregarTarea}) {
 }
 
 NuevaTarea.propTypes = {
-  nombre: propTypes.string
+  agregarTarea: propTypes.func
 }
 
 export default NuevaTarea;
